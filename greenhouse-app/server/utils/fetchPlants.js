@@ -11,4 +11,4 @@ async function fetchPlantsList() {
   }
 }
 
-module.exports = {fetchPlantsList,};
+module.exports = {fetchPlantsList};
