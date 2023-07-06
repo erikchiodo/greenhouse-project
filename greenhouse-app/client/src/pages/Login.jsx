@@ -106,7 +106,7 @@ const LoginFormWrapper = styled(Box)`
   }
 `;
 
-//the form control wrapper
+//form control wrapper
 const FormControlWrapper = styled(FormControl)`
   display: flex;
   align-items: center;
@@ -131,4 +131,4 @@ const FormControlWrapper = styled(FormControl)`
       max-width: 100%;
     }
   }
-};
+`;
