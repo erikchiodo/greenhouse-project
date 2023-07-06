@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Post } = require('../models');
 const { fetchPlantsList } = require("../utils/fetchPlants.js");
 
 
