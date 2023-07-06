@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
+const Post = require('./Post');
 
 const userSchema = new Schema({
   socialTitle: {
@@ -46,7 +47,10 @@ const userSchema = new Schema({
     state: { type: String, required: true },
     zip: { type: String, required: true },
   },
+  // Schema for Buyer purchasing plant
   orders: [Order.schema],
+  // Schema for Seller posting plant
+  posts: [Post.schema],
 });
 
 userSchema.pre('save', async function(next) {
