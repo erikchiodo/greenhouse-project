@@ -13,7 +13,7 @@ import {
        <ProductLI>
          {/* Image section */}
          <Stack className="image-section">
-           <img src={product.image} />
+           <img src={product.image} alt=""  />
            <Box className="button-group">
              {/* Add to wishlist button */}
              <Tooltip label="Add to wishlist">
