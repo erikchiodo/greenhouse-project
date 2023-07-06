@@ -1,5 +1,3 @@
-// SAMPLE SCHEMA FILE
-
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
