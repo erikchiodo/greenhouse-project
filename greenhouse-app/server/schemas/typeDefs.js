@@ -61,6 +61,13 @@ const typeDefs = gql`
     posts: [Post]
   }
 
+  type FAQ {
+    _id: ID
+    id: String
+    type: String
+    description: String
+  }
+
   type Checkout {
     session: ID
   }
@@ -74,9 +81,11 @@ const typeDefs = gql`
     categories: [Category]
     orders: [Order]
     posts: [Post]
+    faqs: [FAQ]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
+    faq: FAQ
     order(_id: ID!): Order
     post(_id: ID!): Post
     checkout(products: [ID]!): Checkout
