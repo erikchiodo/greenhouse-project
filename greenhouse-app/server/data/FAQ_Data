@@ -92,6 +92,7 @@
         }
       ]
     },
+    
     {
       "id": 7,
       "species_id": 1896,
@@ -308,7 +309,7 @@
         {
           "id": 109,
           "type": "watering",
-          "description": "European Silver Fir 'Abies Alba' should be watered about once a week, depending on the season and weather conditions. During the growing season (spring to mid-summer), water deeply and thoroughly. For the rest of the year, water only when the soil is dry. When watering, ensure that the root system is saturated. Do not over-water, as this can lead to root rot."
+          "description": " 'Abies Alba' should be watered about once a week, depending on the season and weather conditions. During the growing season (spring to mid-summer), water deeply and thoroughly. For the rest of the year, water only when the soil is dry. When watering, ensure that the root system is saturated. Do not over-water, as this can lead to root rot."
         },
         {
           "id": 110,
