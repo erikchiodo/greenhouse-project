@@ -19,7 +19,4 @@ const faqSchema = new mongoose.Schema({
 });
 
 const FAQ = mongoose.model('FAQ', faqSchema);
-
-
 module.exports = FAQ;
-
