@@ -36,16 +36,36 @@ const userSchema = new Schema({
     required: true,
   },
   shippingAddress: {
-    address: { type: String },
-    city: { type: String },
-    state: { type: String },
-    zip: { type: String },
+    type: String,
+    required: true,
+  },
+  shippingCity: {
+    type: String,
+    required: true,
+  },
+  shippingState: {
+    type: String,
+    required: true,
+  },
+  shippingZip: {
+    type: String,
+    required: true,
   },
   billingAddress: {
-    address: { type: String, required: true },
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    zip: { type: String, required: true },
+    type: String,
+    required: true,
+  },
+   billingCity: {
+    type: String,
+    required: true,
+  },
+    billingState: {
+    type: String,
+    required: true,
+  },
+    billingZip: {
+    type: String,
+    required: true,
   },
   // Schema for Buyer purchasing plant
   orders: [Order.schema],

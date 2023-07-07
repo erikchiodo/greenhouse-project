@@ -21,42 +21,32 @@ const typeDefs = gql`
 
   type Order {
     _id: ID
-    purchaseDate: Date
+    purchaseDate: String
     users: [User]
   }
 
   type Post {
     _id: ID
-    createdAt: Date
+    createdAt: String
     users: [User]
   }
 
-  type SocialTitle = "Mr." | "Mrs.";
-
-  type ShippingAddress = {
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
-  };
-
-  type BillingAddress = {
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
-  };
-
   type User {
     _id: ID
-    socialTitle: SocialTitle
+    socialTitle: String
     firstName: String
     lastName: String
     email: String
     password: String
-    birthDate: Date
-    shippingAddress: ShippingAddress
-    billingAddress: BillingAddress
+    birthDate: String
+    shippingAddress: String
+    shippingCity: String
+    shippingState: String
+    shippingZip: String
+    billingAddress: String
+    billingCity: String
+    billingState: String
+    billingZip: String
     orders: [Order]
     posts: [Post]
   }
