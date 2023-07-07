@@ -1,19 +1,15 @@
 const db = require('./connection');
-const { User, Product, Category, Post } = require('../models');
-const { fetchPlantsList } = require("../utils/fetchPlants.js");
+const { User, Product, Category, Post, Section } = require('../models'); //Creating Section.js
+// const { fetchPlantsList } = require("../utils/fetchPlants.js");
 
 
 db.once('open', async () => {
   //TODO: Create Categories that seed to Categories Schema (will come from fetchPlantsList)
-
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
   { name: 'Tree' },
-    { name: 'Shrub' },
-  //   { name: 'Electronics' },
-  //   { name: 'Books' },
-  //   { name: 'Toys' }
+  { name: 'Shrub' },
   ]);
 
   console.log("Categories seeded");
@@ -243,6 +239,11 @@ db.once('open', async () => {
       ]);
 
   console.log("Products seeded");
+
+// Seeding for FAQ
+
+
+// Seeding for Section
 
   // Seeding for Users Model
   await User.deleteMany();
