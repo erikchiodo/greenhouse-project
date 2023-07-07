@@ -1,0 +1,30 @@
+:root {
+     --light-bg: #f0f3f0;
+     --dark-bg: #054b03;
+     --green-medium: #568755;
+     --green-light: #7ca27c;
+     --green-very-light: #7aa473;
+   }
+   
+   body {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+   }
+   
+   * {
+     font-family: "Open Sans", sans-serif;
+   }
+   
+   li {
+     list-style: none;
+   }
+   
+   button {
+     cursor: pointer;
+   }
+   
+   a {
+     text-decoration: none;
+   }
+   

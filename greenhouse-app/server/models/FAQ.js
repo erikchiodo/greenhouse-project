@@ -30,8 +30,12 @@ const faqSchema = new mongoose.Schema({
 
 const FAQ = mongoose.model('FAQ', faqSchema);
 
+<<<<<<< HEAD
 module.exports = FAQ;
 =======
 const FAQ = mongoose.model(‘FAQ’, faqSchema);
 module.exports = FAQ;
 >>>>>>> Stashed changes
+=======
+module.exports = FAQ;
+>>>>>>> b6cc010bf3d780d14677e3c78ae6b74239a17d58

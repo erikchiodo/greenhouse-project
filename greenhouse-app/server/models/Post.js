@@ -7,10 +7,10 @@ const postSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  products: [
+  users: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Product",
+      ref: "User",
     },
   ],
 });

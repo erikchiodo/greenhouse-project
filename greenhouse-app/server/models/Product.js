@@ -31,7 +31,6 @@ const productSchema = new Schema({
   },
   category: {
     type: Schema.Types.ObjectId,
-<<<<<<< HEAD
     ref: 'Category',
     required: true
   },
@@ -41,11 +40,6 @@ const productSchema = new Schema({
       ref: 'FAQ',
     },
   ],
-=======
-    ref: "Category",
-    required: true,
-  },
->>>>>>> 607ee1ea3730977c0bbfdf3f3c75f18102582601
 });
 
 const Product = mongoose.model('Product', productSchema);
