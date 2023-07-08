@@ -7,12 +7,34 @@ const postSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  users: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  plantName: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  category: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0.99,
+  },
+  image: {
+    type: String,
+  },
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  productDetails: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 const Post = mongoose.model("Post", postSchema);

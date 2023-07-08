@@ -26,7 +26,12 @@ const typeDefs = gql`
   type Post {
     _id: ID
     createdAt: String
-    users: [User]
+    plantName: String
+    category: String
+    price: String
+    image: String
+    description: String
+    productDetails: String
   }
 
   type User {
