@@ -16,8 +16,9 @@ const typeDefs = gql`
     price: Float
     plantStatus: String
     category: Category
-    faqs: FAQ
-  }
+    faqs: [FAQ]
+}
+
 
   type Order {
     _id: ID
@@ -79,6 +80,7 @@ const typeDefs = gql`
     order(_id: ID!): Order
     post(_id: ID!): Post
     checkout(products: [ID]!): Checkout
+    faq(_id: ID!): FAQ
   }
 
   type Mutation {
@@ -89,6 +91,20 @@ const typeDefs = gql`
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
+  type Section {
+    id: Int
+    type: String
+    description: String
+}
+
+type FAQ {
+    _id: ID
+    id: Int
+    common_name: String
+    description: String
+    section: [Section]
+}
+
 `;
 
 module.exports = typeDefs;
