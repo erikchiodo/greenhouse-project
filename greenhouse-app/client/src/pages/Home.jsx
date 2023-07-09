@@ -20,15 +20,15 @@ import Category2Image from "../assets/category2.jpg";
 import Category3Image from "../assets/category3.jpg";
 import Category4Image from "../assets/category4.jpg";
 
-import ProductImage1 from "../assets/products/product1.jpg";
-import ProductImage2 from "../assets/products/product2.jpg";
-import ProductImage3 from "../assets/products/product3.jpg";
-import ProductImage4 from "../assets/products/product4.jpg";
-import ProductImage5 from "../assets/products/product5.jpg";
-import ProductImage6 from "../assets/products/product6.jpg";
-import ProductImage7 from "../assets/products/product7.jpg";
-import ProductImage8 from "../assets/products/product8.jpg";
-import ProductImage9 from "../assets/products/product9.jpg";
+//import ProductImage1 from "../assets/products/product1.jpg";
+// import ProductImage2 from "../assets/products/product2.jpg";
+// import ProductImage3 from "../assets/products/product3.jpg";
+// import ProductImage4 from "../assets/products/product4.jpg";
+// import ProductImage5 from "../assets/products/product5.jpg";
+// import ProductImage6 from "../assets/products/product6.jpg";
+// import ProductImage7 from "../assets/products/product7.jpg";
+// import ProductImage8 from "../assets/products/product8.jpg";
+// import ProductImage9 from "../assets/products/product9.jpg";
 
 import BlogPostImage1 from "../assets/blog1.jpeg";
 import BlogPostImage2 from "../assets/blog2.jpeg";
