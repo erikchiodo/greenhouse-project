@@ -10,7 +10,6 @@ const postSchema = new Schema({
   plantName: {
     type: String,
     required: true,
-    trim: true,
   },
   category: {
     type: Schema.Types.ObjectId,
@@ -28,12 +27,10 @@ const postSchema = new Schema({
   description: {
     type: String,
     required: true,
-    trim: true,
   },
   productDetails: {
     type: String,
     required: true,
-    trim: true,
   },
 });
 

@@ -49,8 +49,8 @@ const typeDefs = gql`
     billingCity: String
     billingState: String
     billingZip: String
-    orders: [Order]
-    posts: [Post]
+    orders: Order
+    posts: Post
   }
 
   type Checkout {

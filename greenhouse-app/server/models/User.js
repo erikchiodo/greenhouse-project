@@ -55,22 +55,28 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-   billingCity: {
+  billingCity: {
     type: String,
     required: true,
   },
-    billingState: {
+  billingState: {
     type: String,
     required: true,
   },
-    billingZip: {
+  billingZip: {
     type: String,
     required: true,
   },
   // Schema for Buyer purchasing plant
-  orders: [Order.schema],
+  orders: {
+    type: Schema.Types.ObjectId,
+    ref: "Order",
+  },
   // Schema for Seller posting plant
-  posts: [Post.schema],
+  posts: {
+    type: Schema.Types.ObjectId,
+    ref: "Post",
+  },
 });
 
 userSchema.pre('save', async function(next) {

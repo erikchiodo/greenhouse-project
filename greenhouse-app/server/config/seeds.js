@@ -1,10 +1,9 @@
 const db = require('./connection');
-const { User, Product, Category, Post } = require('../models'); //Creating Section.js
+const { User, Product, Category, Post } = require('../models');
 // const { fetchPlantsList } = require("../utils/fetchPlants.js");
 
 
 db.once('open', async () => {
-  //TODO: Create Categories that seed to Categories Schema (will come from fetchPlantsList)
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
@@ -19,7 +18,7 @@ db.once('open', async () => {
 
   // Seeding for Post Model
   await Post.deleteMany();
-  const post = await Post.insertMany([
+  const posts = await Post.insertMany([
     {
       plantName: "Hogyoku Japanese Maple",
       category: categories[2]._id,
@@ -382,7 +381,7 @@ db.once('open', async () => {
       billingCity: "New York",
       billingState: "New York",
       billingZip: "10028",
-      posts: post[3]._id,
+      posts: posts[0]._id,
     },
     {
       socialTitle: "Mr.",
@@ -399,7 +398,7 @@ db.once('open', async () => {
       billingCity: "Billing City",
       billingState: "Billing State",
       billingZip: "54321",
-      posts: post[5]._id,
+      posts: posts[2]._id,
     },
     {
       socialTitle: "Mrs.",
@@ -416,7 +415,7 @@ db.once('open', async () => {
       billingCity: "Billing City",
       billingState: "Billing State",
       billingZip: "09876",
-      posts: post[1]._id,
+      posts: posts[3]._id,
     },
   ]);
 
