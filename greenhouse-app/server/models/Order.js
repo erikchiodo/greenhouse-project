@@ -7,12 +7,12 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  users: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
+  // users: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'User'
+  //   }
+  // ]
 });
 
 const Order = mongoose.model('Order', orderSchema);

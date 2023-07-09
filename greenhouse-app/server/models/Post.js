@@ -13,9 +13,9 @@ const postSchema = new Schema({
     trim: true,
   },
   category: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Category",
     required: true,
-    trim: true,
   },
   price: {
     type: Number,

@@ -20,14 +20,13 @@ const typeDefs = gql`
   type Order {
     _id: ID
     purchaseDate: String
-    users: [User]
   }
 
   type Post {
     _id: ID
     createdAt: String
     plantName: String
-    category: String
+    category: Category
     price: String
     image: String
     description: String
@@ -66,14 +65,13 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
     orders: [Order]
+    order(_id: ID!): Order
     posts: [Post]
+    post(_id: ID!): Post
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
-    order(_id: ID!): Order
-    post(_id: ID!): Post
     checkout(products: [ID]!): Checkout
-    faq(_id: ID!): FAQ
   }
 
   type Mutation {
@@ -94,20 +92,6 @@ const typeDefs = gql`
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
-  type Section {
-    id: Int
-    type: String
-    description: String
-}
-
-type FAQ {
-    _id: ID
-    id: Int
-    common_name: String
-    description: String
-    section: [Section]
-}
-
 `;
 
 module.exports = typeDefs;
