@@ -4,6 +4,8 @@
 import { Link } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { toast } from "react-toastify";
+import productsData from "../data/products";
 
 // components
 import Category from "../components/Home/Category";
@@ -18,15 +20,15 @@ import Category2Image from "../assets/category2.jpg";
 import Category3Image from "../assets/category3.jpg";
 import Category4Image from "../assets/category4.jpg";
 
-import ProductImage1 from "../assets/products/product1.jpg";
-import ProductImage2 from "../assets/products/product2.jpg";
-import ProductImage3 from "../assets/products/product3.jpg";
-import ProductImage4 from "../assets/products/product4.jpg";
-import ProductImage5 from "../assets/products/product5.jpg";
-import ProductImage6 from "../assets/products/product6.jpg";
-import ProductImage7 from "../assets/products/product7.jpg";
-import ProductImage8 from "../assets/products/product8.jpg";
-import ProductImage9 from "../assets/products/product9.jpg";
+//import ProductImage1 from "../assets/products/product1.jpg";
+// import ProductImage2 from "../assets/products/product2.jpg";
+// import ProductImage3 from "../assets/products/product3.jpg";
+// import ProductImage4 from "../assets/products/product4.jpg";
+// import ProductImage5 from "../assets/products/product5.jpg";
+// import ProductImage6 from "../assets/products/product6.jpg";
+// import ProductImage7 from "../assets/products/product7.jpg";
+// import ProductImage8 from "../assets/products/product8.jpg";
+// import ProductImage9 from "../assets/products/product9.jpg";
 
 import BlogPostImage1 from "../assets/blog1.jpeg";
 import BlogPostImage2 from "../assets/blog2.jpeg";
@@ -36,6 +38,10 @@ import PostPlantImage from "../assets/postaplant.jpeg";
 
 
 export default function Home() {
+  const handleSubscribeNow = (event) => {
+    event.preventDefault();
+    toast.success("Great choice! You're all set to save 20% on you next order");
+  };
      //Defining the categories of products, including their titles, links, subtitles, and images.
      const categories = [
        {
@@ -68,80 +74,80 @@ export default function Home() {
        },
      ];
    //Defining the products available, including their IDs, images, titles, prices, ratings, and links.
-     const products = [
-       {
-         id: 1,
-         image: ProductImage1,
-         title: "America Marigold",
-         price: "23.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 2,
-         image: ProductImage2,
-         title: "Black Eyed Susan",
-         price: "25.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 3,
-         image: ProductImage3,
-         title: "Common Yarrow",
-         price: "65.00",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 4,
-         image: ProductImage4,
-         title: "Doublefile Viburnum",
-         price: "67.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 5,
-         image: ProductImage5,
-         title: "Doublefile Viburnum",
-         price: "67.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 6,
-         image: ProductImage6,
-         title: "America Marigold",
-         price: "23.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 7,
-         image: ProductImage7,
-         title: "Common Yarrow",
-         price: "65.00",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 8,
-         image: ProductImage8,
-         title: "America Marigold",
-         price: "23.45",
-         rating: 5,
-         link: "/",
-       },
-       {
-         id: 9,
-         image: ProductImage9,
-         title: "America Marigold",
-         price: "23.45",
-         rating: 5,
-         link: "/",
-       },
-     ];
+    //  const products = [
+    //    {
+    //      id: 1,
+    //      image: ProductImage1,
+    //      title: "America Marigold",
+    //      price: "23.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 2,
+    //      image: ProductImage2,
+    //      title: "Black Eyed Susan",
+    //      price: "25.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 3,
+    //      image: ProductImage3,
+    //      title: "Common Yarrow",
+    //      price: "65.00",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 4,
+    //      image: ProductImage4,
+    //      title: "Doublefile Viburnum",
+    //      price: "67.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 5,
+    //      image: ProductImage5,
+    //      title: "Doublefile Viburnum",
+    //      price: "67.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 6,
+    //      image: ProductImage6,
+    //      title: "America Marigold",
+    //      price: "23.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 7,
+    //      image: ProductImage7,
+    //      title: "Common Yarrow",
+    //      price: "65.00",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 8,
+    //      image: ProductImage8,
+    //      title: "America Marigold",
+    //      price: "23.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //    {
+    //      id: 9,
+    //      image: ProductImage9,
+    //      title: "America Marigold",
+    //      price: "23.45",
+    //      rating: 5,
+    //      link: "/",
+    //    },
+    //  ];
      //Defining the blog posts, including their IDs, titles, short descriptions, dates, links, and images.
    
      const blogPosts = [
@@ -151,7 +157,7 @@ export default function Home() {
                date: "Feb 28, 2019",
                shortDescription:
                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-               link: "/",
+               link: "/blog",
                image: BlogPostImage1,
              },
              {
@@ -160,7 +166,7 @@ export default function Home() {
                date: "Feb 28, 2019",
                shortDescription:
                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-               link: "/",
+               link: "/blog",
                image: BlogPostImage2,
              },
              {
@@ -169,7 +175,7 @@ export default function Home() {
                date: "Feb 28, 2019",
                shortDescription:
                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-               link: "/",
+               link: "/blog",
                image: BlogPostImage3,
              },
            ];
@@ -239,7 +245,7 @@ export default function Home() {
                      <Box as="div">
                        <h3>Post a Plant</h3>
                        <p>Find you plant the home it deserves</p>
-                       <Link to="/">Learn How &gt;</Link>
+                       <Link to="/how-to-post-a-pant">Learn How &gt;</Link>
                      </Box>
                    </SellPlantWrapper>
                  </div>
@@ -256,7 +262,9 @@ export default function Home() {
                    </p>
                    <form>
                      <input type="email" placeholder="Enter Your Email..." />
-                     <button type="submit">Subscribe Now &gt;</button>
+                     <button type="submit" onClick={handleSubscribeNow}>
+                        Subscribe Now &gt;
+                        </button>
                    </form>
                  </SubscribeWrapper>
                </main>
@@ -311,7 +319,8 @@ const HeroWrapper = styled(Box)`
 `;
 //product wrapper
 const ProductsWrapper = styled(Box)`
-  margin-top: 60px;
+  max-width: 1000px;
+  margin: 60px auto 0;
 `;
 
 //category wrapper

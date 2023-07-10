@@ -12,6 +12,7 @@ import {
 
 export default function Login() {
      const [showPassword, setShowPassword] = useState(false);
+     const [error] = useState("");
      const togglePassword = () => {
        setShowPassword(!showPassword);
      };
@@ -23,6 +24,11 @@ export default function Login() {
       {/* Login Form */}
       <LoginFormWrapper as="section">
         <form>
+        {error && (
+            <FormErrorWrapper className="form-error">
+              <p>Authentication Failed</p>
+            </FormErrorWrapper>
+          )}
           {/* Email Input */}
           <FormControlWrapper>
             <FormLabel>Email</FormLabel>
@@ -38,8 +44,8 @@ export default function Login() {
             </InputGroup>
           </FormControlWrapper>
           {/* Forgot Password */}
-          <Link to="/">Forgot your password?</Link>
-          {/* Sign In Button */}
+          <Link to="/forgotPassword">Forgot your password?</Link>
+           {/* Sign In Button */}
           <button type="submit">Sign In</button>
         </form>
         {/* Register Redirect */}
@@ -132,3 +138,17 @@ const FormControlWrapper = styled(FormControl)`
     }
   }
 `;
+//form error msg
+const FormErrorWrapper = styled.div`
+  & p {
+    color: #881c24;
+  }
+
+  text-align: center;
+  background: #f8d7da;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  align-self: stretch;
+`;
+
