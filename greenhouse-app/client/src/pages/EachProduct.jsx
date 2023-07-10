@@ -35,9 +35,14 @@ import { useState } from "react";
 
 export default function EachProduct() {
   const [view, setView] = useState("reviews");
+  const [showPanel, setShowPanel] = useState(false);
 
   const changeView = (v) => {
     setView(v);
+  };
+
+  const toggleReviewPanel = () => {
+    setShowPanel(!showPanel);
   };
 
   const product = {
@@ -160,9 +165,10 @@ export default function EachProduct() {
                   <p>themes</p>
                 </li>
               </ul>
-              <Link className="write-review-btn" to="/">
+              <button className="write-review-btn" onClick={toggleReviewPanel}>
                 Write Your Review!
-              </Link>
+              </button>
+              {showPanel && <WriteReviewForm />}
             </Box>
           ) : (
             <Box as="div" className="details">
@@ -183,7 +189,54 @@ export default function EachProduct() {
   );
 }
 
+function WriteReviewForm() {
+  return (
+    <ReviewFormWrapper>
+      <form>
+        <div className="form-control">
+          <label>Rating:</label>
+          <div>{"⭐".repeat(5)}</div>
+        </div>
+        <div className="form-control">
+          <label>Comment</label>
+          <textarea cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </ReviewFormWrapper>
+  );
+}
+
 // Styled components
+
+const ReviewFormWrapper = styled.section`
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+
+  form {
+    max-width: 100%;
+
+    .form-control {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 10px 0;
+    }
+
+    textarea {
+      border: 1px solid lightgray;
+      width: 100%;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+    }
+  }
+`;
 
 const ProductWrapper = styled(Box)`
   margin-top: 60px;

@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 // components
 import WishList from "../components/Account/WishList";
@@ -14,6 +16,12 @@ export default function Account() {
     username: "John Doe",
   };
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!data.username) {
+      navigate("/login");
+    }
+  }, [navigate, data.username]);
   const [view, setView] = useState("yourWishList");
 
   return (

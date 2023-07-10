@@ -15,7 +15,31 @@ export default function Blog() {
     author: "Themes PlazaThemes",
     date: "Feb 28th, 2019",
     tags: "Fashion",
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, ... (content truncated for brevity)`
+    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis,
+    debitis commodi expedita, asperiores soluta eos nemo aspernatur
+    eveniet dolores voluptas, rem optio totam perferendis! Rerum mollitia
+    impedit non accusamus ipsam adipisci! Veritatis, alias sequi eius
+    voluptatum veniam dicta consequatur impedit animi unde commodi beatae
+    quia doloribus, illo placeat qui. Dolor, doloremque? Dolorum,
+    doloremque? Minima iure consectetur maxime consequatur sit eaque natus
+    et! Alias sint corrupti ab vero eveniet. Possimus, ad. Numquam quaerat
+    sunt architecto assumenda autem aliquid, rem accusamus similique
+    veritatis voluptas natus blanditiis dolores! Iure, deserunt explicabo
+    reprehenderit vitae sed earum minima ipsa odio. Laborum earum quam
+    numquam quasi.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis,
+    debitis commodi expedita, asperiores soluta eos nemo aspernatur
+    eveniet dolores voluptas, rem optio totam perferendis! Rerum mollitia
+    impedit non accusamus ipsam adipisci! Veritatis, alias sequi eius
+    voluptatum veniam dicta consequatur impedit animi unde commodi beatae
+    quia doloribus, illo placeat qui. Dolor, doloremque? Dolorum,
+    doloremque? Minima iure consectetur maxime consequatur sit eaque natus
+    et! Alias sint corrupti ab vero eveniet. Possimus, ad. Numquam quaerat
+    sunt architecto assumenda autem aliquid, rem accusamus similique
+    veritatis voluptas natus blanditiis dolores! Iure, deserunt explicabo
+    reprehenderit vitae sed earum minima ipsa odio. Laborum earum quam
+    numquam quasi.
+    `,
   };
 
   return (

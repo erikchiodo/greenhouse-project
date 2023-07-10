@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // components
 import styled from "@emotion/styled";
 import { Box } from "@chakra-ui/react";
@@ -10,11 +12,13 @@ import SearchBar from "../components/Shop/SearchBar";
 import SectionTitle from "../components/shared/SectionTitle";
 
 export default function Shop() {
+  const [selectedCategory, setSelectedCategory] = useState("category-1");
   return (
     <main>
       <SearchBar />
+      <SearchBar setSelectedCategory={setSelectedCategory} />
       <ProductsWrapper as="section">
-        <SectionTitle title="Category Name" />
+      <SectionTitle title={selectedCategory} />
         <ProductsList products={productsData} productsCount={12} />
       </ProductsWrapper>
     </main>
