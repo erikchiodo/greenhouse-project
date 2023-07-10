@@ -209,7 +209,7 @@ export default function Home() {
                  {/* Products Section */}
                  <ProductsWrapper as="section">
                    <SectionTitle title="Our Products" />
-                   <ProductsList productsCount={6} products={products} />
+                   <ProductsList productsCount={6} products={productsData} />
                  </ProductsWrapper>
            
                  {/* Blog Post Section */}
