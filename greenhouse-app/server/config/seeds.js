@@ -372,7 +372,7 @@ db.once('open', async () => {
       lastName: "Lewis",
       email: "Hannah@testemail.com",
       password: "password12345",
-      birthDate: new Date("05/06/1994"),
+      birthdate: new Date("05/06/1994"),
       shippingAddress: "1 Park Ave",
       shippingCity: "New York",
       shippingState: "New York",

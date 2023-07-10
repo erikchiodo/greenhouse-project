@@ -37,12 +37,7 @@ const resolvers = {
       return await Product.findById(_id).populate("category");
     },
 
-    // Get All Users -- Returns all null (REMOVE FROM FINALIZED CODE)
-    users: async () => {
-      return await User.find();
-    },
-
-    // Get User by ID -- DOES NOT WORK (NEED USER ID)
+    // Get User by ID -- Works. Need to first log in user and retrieve token
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
