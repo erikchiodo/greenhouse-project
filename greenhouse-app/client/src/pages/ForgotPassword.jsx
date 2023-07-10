@@ -20,8 +20,6 @@ export default function ForgotPassword() {
     <div className="form-control">
       {/* Email Address Label */}
       <label>Email Address</label>
-
-      {/* Email Address Input */}
       <input type="email" />
 
       {/* Send Reset Link Button */}

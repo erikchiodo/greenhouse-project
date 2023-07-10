@@ -16,7 +16,7 @@ export default function Contact() {
                {/* Address- we could take out */}
             <li>
               <MdLocationPin fontSize={22} />
-              <Text as="p">123 Main Street, USA</Text>
+              <Text as="p">123 Main Street,New York NY,10023 USA</Text>
             </li>
             <li>
                {/* contact/store Email */}
