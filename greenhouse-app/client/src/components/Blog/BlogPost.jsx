@@ -27,7 +27,7 @@ export default function BlogPost({ post }) {
             <label htmlFor="email">Your Email:</label>
             <input type="email" name="email" />
           </div>
-         
+       
           <div className="form-group">
             <label htmlFor="subject">Subject:</label>
             <input type="text" name="subject" />
