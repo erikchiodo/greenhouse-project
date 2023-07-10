@@ -36,19 +36,19 @@ const typeDefs = gql`
   type User {
     _id: ID
     socialTitle: String
-    firstName: String
-    lastName: String
-    email: String
-    password: String
-    birthDate: String
-    shippingAddress: String
-    shippingCity: String
-    shippingState: String
-    shippingZip: String
-    billingAddress: String
-    billingCity: String
-    billingState: String
-    billingZip: String
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    birthDate: String!
+    shippingAddress: String!
+    shippingCity: String!
+    shippingState: String!
+    shippingZip: String!
+    billingAddress: String!
+    billingCity: String!
+    billingState: String!
+    billingZip: String!
     orders: Order
     posts: Post
   }
@@ -64,13 +64,15 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    orders: [Order]
-    order(_id: ID!): Order
-    posts: [Post]
-    post(_id: ID!): Post
+    category(_id: ID!): Category
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
+    users: User
     user: User
+    order(_id: ID!): Order
+    orders: [Order]
+    post(_id: ID!): Post
+    posts: [Post]
     checkout(products: [ID]!): Checkout
   }
 
@@ -80,6 +82,15 @@ const typeDefs = gql`
       lastName: String!
       email: String!
       password: String!
+      birthDate: String!
+      shippingAddress: String!
+      shippingCity: String!
+      shippingState: String!
+      shippingZip: String!
+      billingAddress: String!
+      billingCity: String!
+      billingState: String!
+      billingZip: String!
     ): Auth
     addOrder(users: [ID]!): Order
     addPost(users: [ID]!): Post

@@ -5,9 +5,17 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
+    // Get all Categories -- WORKS
     categories: async () => {
       return await Category.find();
     },
+
+    // Get Category By ID -- WORKS
+    category: async (parent, { _id }) => {
+      return await Category.findById(_id);
+    },
+
+    // Get All Products -- WORKS
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -24,9 +32,17 @@ const resolvers = {
       return await Product.find(params).populate("category");
     },
 
+    // Get Product by ID -- WORKS
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("category");
     },
+
+    // Get All Users -- Returns all null (REMOVE FROM FINALIZED CODE)
+    users: async () => {
+      return await User.find();
+    },
+
+    // Get User by ID -- DOES NOT WORK (NEED USER ID)
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -34,13 +50,15 @@ const resolvers = {
           populate: "category",
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
 
       throw new AuthenticationError("Not logged in");
     },
+
+    // Get Orders by User ID - DOES NOT WORK (NEED USER ID)
     order: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -53,9 +71,12 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    // Get all Posts - WORKS
     posts: async () => {
       return await Post.find();
     },
+
+    // Get Posts by User ID - DOES NOT WORK (NEED USER ID)
     post: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -69,6 +90,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+    // Checkout (creating list of checkout items) -- NEED TO FIGURE OUT HOW TO USE
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
@@ -106,7 +128,9 @@ const resolvers = {
       return { session: session.id };
     },
   },
+
   Mutation: {
+    // Add User
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
@@ -114,7 +138,7 @@ const resolvers = {
       return { token, user };
     },
 
-    // Check addOrder and addPost
+    // Add Order (Users add item to their cart)
     addOrder: async (parent, { users }, context) => {
       console.log(context);
       if (context.user) {
@@ -130,6 +154,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+    // Add Post (Users post a plant)
     addPost: async (parent, { users }, context) => {
       console.log(context);
       if (context.user) {
@@ -144,6 +169,8 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
+    // Update User information
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {
@@ -153,6 +180,8 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
+    // Update Product
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
@@ -162,6 +191,8 @@ const resolvers = {
         { new: true }
       );
     },
+
+    // Login (Validating email/password input)
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

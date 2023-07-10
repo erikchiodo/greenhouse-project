@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 import Category from "../components/Home/Category";
 import SectionTitle from "../components/shared/SectionTitle";
 import BlogPostCard from "../components/Home/BlogPostCard";
-import ProductsList from "../components/shared/ProductsList";
+import ProductsList from "../components/shared/ProductList";
 
 // assets
 import HeroBackground from "../assets/hero.jpeg";
