@@ -27,18 +27,6 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
-    // order: async (parent, { _id }, context) => {
-    //   if (context.user) {
-    //     const user = await User.findById(context.user._id).populate({
-    //       path: "orders.products",
-    //       populate: "category",
-    //     });
-
-    //     return user.orders.id(_id);
-    //   }
-
-    //   throw new AuthenticationError("Not logged in");
-    // },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
@@ -82,36 +70,6 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    },
-    addOrder: async (parent, { products }, context) => {
-      console.log(context);
-      if (context.user) {
-        const order = new Order({ products });
-
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { orders: order },
-        });
-
-        return order;
-      }
-
-      throw new AuthenticationError("Not logged in");
-    },
-
-    // Add Post (Users post a plant)
-    addPost: async (parent, { users }, context) => {
-      console.log(context);
-      if (context.user) {
-        const post = new Post({ users });
-
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { posts: post },
-        });
-
-        return post;
-      }
-
-      throw new AuthenticationError("Not logged in");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

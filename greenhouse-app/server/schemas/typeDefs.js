@@ -62,10 +62,6 @@ const typeDefs = gql`
     getProductById(_id: ID!): Product
     getProductsByCategory(category: String!): [Product!]!
     getUserById(_id: ID!): User
-    order(_id: ID!): Order
-    orders: [Order]
-    post(_id: ID!): Post
-    posts: [Post]
     checkout(products: [ID]!): Checkout
   }
 
@@ -85,15 +81,6 @@ const typeDefs = gql`
       billingState: String!
       billingZip: String!
     ): Auth
-    addOrder(purchaseDate: String!): Order
-    addPost(
-      plantName: String!
-      category: String!
-      price: String!
-      image: String!
-      description: String!
-      productDetails: String!
-    ): Post
     login(email: String!, password: String!): Auth
   }
 `;

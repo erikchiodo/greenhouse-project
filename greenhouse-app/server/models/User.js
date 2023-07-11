@@ -72,11 +72,6 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Order",
   },
-  // Schema for Seller posting plant
-  posts: {
-    type: Schema.Types.ObjectId,
-    ref: "Post",
-  },
 });
 
 userSchema.pre('save', async function(next) {
