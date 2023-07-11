@@ -20,18 +20,27 @@ export default function SearchBar({ setSelectedCategory }) {
   const categories = [
     {
       id: 1,
-      label: "Category 1",
+      label: "Select Category",
+      value: "category-0",
+    },
+    {
+      id: 1,
+      label: "Fig Trees",
       value: "category-1",
     },
     {
       id: 2,
-      label: "Category 2",
+      label: "Maple Trees",
       value: "category-2",
     },
-    // ... additional category objects ...
+    {
+      id: 3,
+      label: "Shrub",
+      value: "category-3",
+    },
     {
       id: 4,
-      label: "Category 4",
+      label: "Fruits",
       value: "category-4",
     },
   ];

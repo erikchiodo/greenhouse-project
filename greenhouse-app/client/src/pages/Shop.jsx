@@ -12,7 +12,7 @@ import SearchBar from "../components/Shop/SearchBar";
 import SectionTitle from "../components/shared/SectionTitle";
 
 export default function Shop() {
-  const [selectedCategory, setSelectedCategory] = useState("category-1");
+  const [selectedCategory, setSelectedCategory] = useState("Category-0");
   return (
     <main>
       <SearchBar />
