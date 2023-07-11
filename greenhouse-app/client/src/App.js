@@ -50,4 +50,4 @@ export default function App() {
   );
 }
 
-ServiceWorker.register();
+//ServiceWorker.register();
