@@ -21,25 +21,25 @@ export default function SearchBar({ setSelectedCategory }) {
     {
       id: 1,
       label: "Select Category",
-      value: "category-0",
+      value: "Choose a tree",
     },
     {
-      id: 1,
+      id: 2,
       label: "Fig Trees",
       value: "Fig Trees",
     },
     {
-      id: 2,
+      id: 3,
       label: "Maple Trees",
       value: "Maple Trees",
     },
     {
-      id: 3,
+      id: 4,
       label: "Shrub Trees",
       value: "Shrub Trees",
     },
     {
-      id: 4,
+      id: 5,
       label: "Fruits Trees",
       value: "Fruits Trees",
     },
@@ -48,7 +48,9 @@ export default function SearchBar({ setSelectedCategory }) {
   // Function to handle category change
   const changeCategory = (event) => {
     setSelectedCategory(event.target.value);
+    console.log(event.target.value);  
   };
+  
 
   return (
     <SearchBarWrapper as="section" imagepath={BackgroundImage}>

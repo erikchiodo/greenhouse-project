@@ -18,6 +18,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/1",
+    categoryName: "Fig Trees",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const productsData = [
     price: "25.45",
     rating: 5,
     link: "/products/2",
+    categoryName: "Fig Trees",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const productsData = [
     price: "65.00",
     rating: 5,
     link: "/products/3",
+    categoryName: "Maple Trees",
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const productsData = [
     price: "67.45",
     rating: 5,
     link: "/products/4",
+    categoryName: "Shrub Trees",
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ const productsData = [
     price: "67.45",
     rating: 5,
     link: "/products/5",
+    categoryName: "Shrub Trees",
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/6",
+    categoryName: "Fig Trees",
   },
   {
     id: 7,
@@ -66,6 +72,7 @@ const productsData = [
     price: "65.00",
     rating: 5,
     link: "/products/7",
+    categoryName: "Maple Trees",
   },
   {
     id: 8,
@@ -74,6 +81,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/8",
+    categoryName: "Fig Trees",
   },
   {
     id: 9,
@@ -82,6 +90,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/9",
+    categoryName: "Fig Trees",
   },
   {
     id: 10,
@@ -90,6 +99,7 @@ const productsData = [
     price: "65.00",
     rating: 5,
     link: "/products/10",
+    categoryName: "Maple Trees",
   },
   {
     id: 11,
@@ -98,6 +108,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/11",
+    categoryName: "Fig Trees",
   },
   {
     id: 12,
@@ -106,6 +117,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/12",
+    categoryName: "Fig Trees",
   },
   {
     id: 13,
@@ -114,6 +126,7 @@ const productsData = [
     price: "65.00",
     rating: 5,
     link: "/products/13",
+    categoryName: "Maple Trees",
   },
   {
     id: 14,
@@ -122,6 +135,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/14",
+    categoryName: "Fig Trees",
   },
   {
     id: 15,
@@ -130,6 +144,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/15",
+    categoryName: "Fig Trees",
   },
   {
     id: 16,
@@ -138,6 +153,7 @@ const productsData = [
     price: "65.00",
     rating: 5,
     link: "/products/16",
+    categoryName: "Maple Trees",
   },
   {
     id: 17,
@@ -146,6 +162,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/17",
+    categoryName: "Fig Trees",
   },
   {
     id: 18,
@@ -154,6 +171,7 @@ const productsData = [
     price: "23.45",
     rating: 5,
     link: "/products/18",
+    categoryName: "Fig Trees",
   },
 ];
 
