@@ -32,8 +32,7 @@ const productSchema = new Schema({
     default: "NOT_SOLD",
   },
   category: {
-    type: Schema.Types.ObjectId,
-    ref: "Category",
+    type: String,
     required: true,
   },
 });

@@ -32,7 +32,7 @@ const userSchema = new Schema({
     minlength: 5,
   },
   birthDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   shippingAddress: {
