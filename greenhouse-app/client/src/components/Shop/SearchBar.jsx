@@ -26,22 +26,22 @@ export default function SearchBar({ setSelectedCategory }) {
     {
       id: 1,
       label: "Fig Trees",
-      value: "category-1",
+      value: "Fig Trees",
     },
     {
       id: 2,
       label: "Maple Trees",
-      value: "category-2",
+      value: "Maple Trees",
     },
     {
       id: 3,
-      label: "Shrub",
-      value: "category-3",
+      label: "Shrub Trees",
+      value: "Shrub Trees",
     },
     {
       id: 4,
-      label: "Fruits",
-      value: "category-4",
+      label: "Fruits Trees",
+      value: "Fruits Trees",
     },
   ];
 
