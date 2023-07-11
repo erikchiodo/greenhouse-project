@@ -1,6 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category, Post } = require('../models');
-// const { fetchPlantsList } = require("../utils/fetchPlants.js");
+const { User, Product, Post } = require('../models');
 
 
 db.once('open', async () => {
@@ -360,7 +359,7 @@ db.once('open', async () => {
       lastName: "Lewis",
       email: "Hannah@testemail.com",
       password: "password12345",
-      birthdate: "05/06/1994",
+      birthDate: "05/06/1994",
       shippingAddress: "1 Park Ave",
       shippingCity: "New York",
       shippingState: "New York",
