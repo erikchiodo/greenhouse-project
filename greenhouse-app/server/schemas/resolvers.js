@@ -11,12 +11,18 @@ const resolvers = {
     getProductById: async (parent, { _id }) => {
       return await Product.findById(_id);
     },
-    getProductsByCategory: (parent, { category }) => {
-      return Product.find({ category: category });
+    getProductsByCategory: async (parent, { category }) => {
+      try {
+        const products = await Product.find({ category: category });
+        return products;
+      } catch (error) {
+        console.log(error);
+        throw new Error("Failed to fetch products by category");
+      }
     },
     getUserById: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id)
+        const user = await User.findById(context.user._id);
         return user;
       }
       throw new AuthenticationError("Not logged in");
