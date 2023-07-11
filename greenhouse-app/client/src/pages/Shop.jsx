@@ -15,7 +15,7 @@ export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("Category-0");
   return (
     <main>
-      <SearchBar />
+     
       <SearchBar setSelectedCategory={setSelectedCategory} />
       <ProductsWrapper as="section">
       <SectionTitle title={selectedCategory} />
