@@ -12,18 +12,24 @@ import SearchBar from "../components/Shop/SearchBar";
 import SectionTitle from "../components/shared/SectionTitle";
 
 export default function Shop() {
-  const [selectedCategory, setSelectedCategory] = useState("category-1");
+  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  
+  // Filter the products based on selected category
+  const filteredProducts = selectedCategory === "All Categories" 
+    ? productsData 
+    : productsData.filter(product => product.category === selectedCategory);
+
   return (
     <main>
-      <SearchBar />
       <SearchBar setSelectedCategory={setSelectedCategory} />
       <ProductsWrapper as="section">
-      <SectionTitle title={selectedCategory} />
-        <ProductsList products={productsData} productsCount={12} />
+        <SectionTitle title={selectedCategory} />
+        <ProductsList products={filteredProducts} productsCount={12} />
       </ProductsWrapper>
     </main>
   );
 }
+
 
 // Styled components
 const ProductsWrapper = styled(Box)`

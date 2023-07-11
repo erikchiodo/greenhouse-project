@@ -13,7 +13,7 @@ import { useState } from "react";
 
 export default function Account() {
   const data = {
-    username: "John Doe",
+    username: "Ellie",
   };
 
   const navigate = useNavigate();

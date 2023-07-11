@@ -20,15 +20,7 @@ import Category2Image from "../assets/category2.jpg";
 import Category3Image from "../assets/category3.jpg";
 import Category4Image from "../assets/category4.jpg";
 
-//import ProductImage1 from "../assets/products/product1.jpg";
-// import ProductImage2 from "../assets/products/product2.jpg";
-// import ProductImage3 from "../assets/products/product3.jpg";
-// import ProductImage4 from "../assets/products/product4.jpg";
-// import ProductImage5 from "../assets/products/product5.jpg";
-// import ProductImage6 from "../assets/products/product6.jpg";
-// import ProductImage7 from "../assets/products/product7.jpg";
-// import ProductImage8 from "../assets/products/product8.jpg";
-// import ProductImage9 from "../assets/products/product9.jpg";
+
 
 import BlogPostImage1 from "../assets/blog1.jpeg";
 import BlogPostImage2 from "../assets/blog2.jpeg";
@@ -46,108 +38,34 @@ export default function Home() {
      const categories = [
        {
          id: 1,
-         title: "Category 1",
+         title: "Fig Trees",
+         subtitle: "",
          link: "/",
-         subtitle: "Big Sale Products",
          image: Category1Image,
        },
        {
          id: 2,
-         title: "Category 2",
+         title: "Maple Trees",
+         subtitle: "",
          link: "/",
-         subtitle: "New Arrivals",
          image: Category2Image,
        },
        {
          id: 3,
-         title: "Category 3",
+         title: "Shrub Trees",
+         subtitle: "",
          link: "/",
-         subtitle: "Top Products",
          image: Category3Image,
        },
        {
          id: 4,
-         title: "Category 4",
+         title: "Fruits Trees",
+         subtitle: "",
          link: "/",
-         subtitle: "Trending Products",
          image: Category4Image,
        },
      ];
-   //Defining the products available, including their IDs, images, titles, prices, ratings, and links.
-    //  const products = [
-    //    {
-    //      id: 1,
-    //      image: ProductImage1,
-    //      title: "America Marigold",
-    //      price: "23.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 2,
-    //      image: ProductImage2,
-    //      title: "Black Eyed Susan",
-    //      price: "25.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 3,
-    //      image: ProductImage3,
-    //      title: "Common Yarrow",
-    //      price: "65.00",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 4,
-    //      image: ProductImage4,
-    //      title: "Doublefile Viburnum",
-    //      price: "67.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 5,
-    //      image: ProductImage5,
-    //      title: "Doublefile Viburnum",
-    //      price: "67.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 6,
-    //      image: ProductImage6,
-    //      title: "America Marigold",
-    //      price: "23.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 7,
-    //      image: ProductImage7,
-    //      title: "Common Yarrow",
-    //      price: "65.00",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 8,
-    //      image: ProductImage8,
-    //      title: "America Marigold",
-    //      price: "23.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //    {
-    //      id: 9,
-    //      image: ProductImage9,
-    //      title: "America Marigold",
-    //      price: "23.45",
-    //      rating: 5,
-    //      link: "/",
-    //    },
-    //  ];
+   
      //Defining the blog posts, including their IDs, titles, short descriptions, dates, links, and images.
    
      const blogPosts = [
@@ -323,6 +241,7 @@ const ProductsWrapper = styled(Box)`
   margin: 60px auto 0;
 `;
 
+
 //category wrapper
 const CategoryWrapper = styled(Box)`
   display: flex;
@@ -333,6 +252,14 @@ const CategoryWrapper = styled(Box)`
   justify-content: center;
   align-items: center;
   padding: 10px 5px;
+ `;
+
+ const CategoryTitle = styled.h2`
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  white-space: normal; // Allow the title to wrap onto multiple lines
 `;
 
 //blog wrapper
@@ -451,7 +378,17 @@ const SellPlantWrapper = styled(Box)`
   @media (max-width: 768px) {
     background-position: -250px;
   }
-`;
 
-           
+
+export default function Category({ title, link, subtitle, image }) {
+  return (
+    <CategoryWrapper>
+      <CategoryImage src={image} alt={title} />
+      <CategoryTitle>{title}</CategoryTitle>
+      <CategorySubtitle>{subtitle}</CategorySubtitle>
+      <CategoryLink to={link}>Explore</CategoryLink>
+    </CategoryWrapper>
+  );
+}  
+`;       
            
