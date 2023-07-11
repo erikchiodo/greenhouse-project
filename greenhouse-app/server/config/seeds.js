@@ -14,7 +14,7 @@ db.once('open', async () => {
     { categoryName: "Fruits" },
   ]);
 
-  console.log("Categories seeded");
+  console.log("Categories seeded");[]
 
   // Seeding for Post Model
   await Post.deleteMany();
