@@ -153,6 +153,8 @@ const resolvers = {
     addPost: async (parent, { users }, context) => {
       console.log(context);
       if (context.user) {
+
+        // create categories object
         const post = new Post({ users });
 
         await User.findByIdAndUpdate(context.user._id, {

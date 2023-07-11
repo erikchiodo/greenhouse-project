@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/react";
 import productsData from "../data/products";
 
 // components
-import ProductsList from "../components/shared/ProductsList";
+import ProductsList from "../components/shared/ProductList";
 import SearchBar from "../components/Shop/SearchBar";
 import SectionTitle from "../components/shared/SectionTitle";
 
