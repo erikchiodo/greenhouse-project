@@ -1,7 +1,7 @@
 
 import styled from "@emotion/styled"; 
 import { useState } from "react"; 
-import styled from "@emotion/styled"; 
+
 
 // icons
 import { AiOutlineClose } from "react-icons/ai";
