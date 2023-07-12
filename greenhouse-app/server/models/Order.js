@@ -4,15 +4,14 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema({
   purchaseDate: {
-    type: Date,
-    default: Date.now
+    type: String,
   },
-  // users: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'User'
-  //   }
-  // ]
+  status: {
+    type: String,
+  },
+  total: {
+    type: String,
+  }
 });
 
 const Order = mongoose.model('Order', orderSchema);

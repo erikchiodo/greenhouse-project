@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Order = require('./Order');
-const Post = require('./Post');
 
 const userSchema = new Schema({
   socialTitle: {
@@ -68,10 +66,14 @@ const userSchema = new Schema({
     required: true,
   },
   // Schema for Buyer purchasing plant
-  orders: {
+  orders: [{
     type: Schema.Types.ObjectId,
     ref: "Order",
-  },
+  }],
+  products: [{
+    type: Schema.Types.ObjectId,
+    ref: "Product"
+  }]
 });
 
 userSchema.pre('save', async function(next) {

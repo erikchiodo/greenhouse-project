@@ -3,72 +3,7 @@ const { User, Product, Post } = require('../models');
 
 
 db.once('open', async () => {
-  // Seeding for Post Model
-  await Post.deleteMany();
-  const posts = await Post.insertMany([
-    {
-      plantName: "Hogyoku Japanese Maple",
-      category: "Maple Trees",
-      price: "59.99",
-      image:
-        "https://perenual.com/storage/species_image/61_acer_palmatum_hogyoku/regular/2560px-Kyoto_Japan0431.jpg",
-      description:
-        "Hogyoku Japanese Maple (Acer palmatum 'Hogyoku') is an amazing plant species noted for its striking beauty. Its delicate foliage emerges with a golden hue and develops into a vibrant, deep scarlet during the cooler months. Bright red flowers bloom in spring and bring in stunning hues all season long. The foliage turns to yellow, orange, and pink in the fall. Outstanding bark color is a nice addition to the landscape - from cinnamon-red to orange and yellow. The beauty of tiger-striped bark truly stands out in the winter. Hogyoku is easy to grow and low-maintenance. It also does extremely well in containers and makes a stunning accent for any garden.",
-      productDetails: "See Description for details",
-    },
-    {
-      plantName: "Hubb's Red Willow Japanese Maple",
-      category: "Maple Trees",
-      price: "49.99",
-      image:
-        "https://perenual.com/storage/species_image/163_acer_shirasawanum_red_dawn/regular/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
-      description:
-        "https://perenual.com/storage/species_image/163_acer_shirasawanum_red_dawn/regular/800px-Acer_Palmatum_27Red_Pygmy27.jpg",
-      productDetails: "See Description for details",
-    },
-    {
-      plantName: "Iijima Sunago Japanese Maple",
-      category: "Maple Trees",
-      price: "40.00",
-      image:
-        "https://perenual.com/storage/species_image/63_acer_palmatum_iijima_sunago/regular/Acer_palmatum_27Oshio_beni27_-_JPG1.jpg",
-      description:
-        "The Iijima Sunago Japanese Maple is a unique and beautiful tree that is truly one of a kind. Its foliage starts off deep purple-red in the springtime, transitioning to a lighter pink-red throughout the summer. Bring your garden a splash of color and texture with this stunning maple that develops into a graceful, upright tree with a spreading, twiggy shape. Its brightly-colored leaves are a joy to behold during the autumn, featuring oranges and yellows that draw in the eye. In addition, its small stature makes it a perfect choice for tight garden settings. The Iijima Sunago Japanese Maple is truly amazing!",
-      productDetails: "See Description for details",
-    },
-    {
-      plantName: "Inaba Shidare Cutleaf Japanese Maple",
-      category: "Maple Trees",
-      price: "69.99",
-      image:
-        "https://perenual.com/storage/species_image/459_acer_palmatum_var_dissectum_inaba-shidare/regular/2560px-Acer_palmatum_var._dissectum_27Inaba-shidare27.jpg",
-      description:
-        "The Inaba Shidare Cutleaf Japanese Maple is a truly unique and majestic tree. Its large, showy green leaves with serrated edges set it apart from other trees. As it grows and matures, its foliage develops an attractive red color with patches of yellow that is truly stunning. In autumn, the colors become even more intense as its leaves turn to shades of yellow, purple, and red. The Inaba Shidare Cutleaf Japanese Maple is an incredibly hardy tree, able to withstand extremes of temperature and withstand harsh winds. This makes it an excellent choice for a wide range of climates and conditions. It is an ideal tree for creating a beautiful focal point in a garden, courtyard or patio. Its long lasting beauty is sure to remain a source of admiration and pleasure for years to come.",
-      productDetails: "See Description for details",
-    },
-    {
-      plantName: "Inazuma Japanese Maple",
-      category: "Maple Trees",
-      price: "78.50",
-      image:
-        "https://perenual.com/storage/species_image/78_acer_palmatum_margaret_bee/regular/Acer_palmatum_28Japanese_maple_tree29_3_284904402847329.jpg",
-      description:
-        "Inazuma Japanese Maple (Acer palmatum 'Inazuma') is a stunning and versatile deciduous tree that adds a serene, mystical aura to any garden. It has delicate, feathery, light green foliage during the summer, and vibrant blazing yellow during autumn. Winter brings bright fire-red colors that look simply spectacular against a snowy backdrop. Inazuma Japanese maple is ideal for smaller gardens and landscapes as it only reaches up to 15-20 feet tall and wide. It grows best in light shade to full sun, adding a unique dimension to any outdoor area. Prune it for a nice bonsai tree shape, or leave it to its natural shape and watch the beauty of this bold and breath-taking tree transform your garden.",
-      productDetails: "See Description for details",
-    },
-    {
-      plantName: "Okagami Japanese Maple",
-      category: "Maple Trees",
-      price: "87.75",
-      image:
-        "https://perenual.com/storage/species_image/84_acer_palmatum_okagami/regular/4555737792_4363d30713_b.jpg",
-      description:
-        "The Okagami Japanese Maple is a stunning tree that is sure to add beautiful colour and texture to any landscape. Its name translates to \u201cbig mirror,\u201d and its bright green leaves mottle to a softer yellow-green in the center, giving it an iridescent appearance. In the spring, these leaves turn to a deep red, providing a vivid contrast against the bluish-brown bark. This tree is highly prized for its easy care and compact size, making it an ideal choice for smaller gardens. Additionally, its low branching habit and spreading shape make it a beautiful feature tree. The Okagami Japanese Maple is truly an amazing tree and a welcome addition to any gorgeous garden.",
-      productDetails: "See Description for details",
-    },
-  ]);
 
-  console.log("Posts seeded");
 
   // Seeding for Product Model
   await Product.deleteMany();
@@ -368,7 +303,6 @@ db.once('open', async () => {
       billingCity: "New York",
       billingState: "New York",
       billingZip: "10028",
-      posts: posts[0]._id,
     },
     {
       socialTitle: "Mr.",
@@ -385,7 +319,6 @@ db.once('open', async () => {
       billingCity: "Billing City",
       billingState: "Billing State",
       billingZip: "54321",
-      posts: posts[2]._id,
     },
     {
       socialTitle: "Mrs.",
@@ -402,7 +335,6 @@ db.once('open', async () => {
       billingCity: "Billing City",
       billingState: "Billing State",
       billingZip: "09876",
-      posts: posts[3]._id,
     },
   ]);
 

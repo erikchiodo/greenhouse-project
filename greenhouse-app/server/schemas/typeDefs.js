@@ -3,29 +3,29 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Product {
     _id: ID
-    productName: String
-    category: String
-    description: String
+    productName: String!
+    description: String!
     image: String
-    quantity: Int
-    price: Float
-    plantStatus: String
+    price: Float!
+    quantity: Int!
+    plantStatus: String!
+    category: String!
   }
-
   type Order {
     _id: ID
     purchaseDate: String
+    status: String
+    total: String
   }
 
-  type Post {
-    _id: ID
-    createdAt: String
-    plantName: String
-    category: String
-    price: String
+  input ProductInput {
+    productName: String!
+    description: String!
     image: String
-    description: String
-    productDetails: String
+    price: Float!
+    quantity: Int!
+    plantStatus: String!
+    category: String!
   }
 
   type User {
@@ -44,8 +44,24 @@ const typeDefs = gql`
     billingCity: String!
     billingState: String!
     billingZip: String!
-    orders: Order
-    posts: Post
+    orders: [Order]
+    products: [Product]
+  }
+
+  input UserInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    birthDate: String!
+    shippingAddress: String!
+    shippingCity: String!
+    shippingState: String!
+    shippingZip: String!
+    billingAddress: String!
+    billingCity: String!
+    billingState: String!
+    billingZip: String!
   }
 
   type Checkout {
@@ -63,10 +79,13 @@ const typeDefs = gql`
     getProductsByCategory(category: String!): [Product!]!
     getUserById(_id: ID!): User
     checkout(products: [ID]!): Checkout
+    getAllOrders: [Order!]
+    getOrderById(_id: ID!): Order
   }
 
   type Mutation {
     addUser(
+      socialTitle: String
       firstName: String!
       lastName: String!
       email: String!
@@ -81,6 +100,20 @@ const typeDefs = gql`
       billingState: String!
       billingZip: String!
     ): Auth
+    addOrder(
+      purchaseDate: String
+      status: String
+      total: String
+      ): Order
+    addProduct(
+      productName: String!
+      description: String!
+      image: String
+      price: Float!
+      quantity: Int!
+      plantStatus: String!
+      category: String!
+    ): Product
     login(email: String!, password: String!): Auth
   }
 `;
